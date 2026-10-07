@@ -1,0 +1,15 @@
+# IDE
+.idea/
+.vscode/
+
+# macOS
+.DS_Store
+
+# Go: сборка, тесты, профили
+bin/
+*.test
+*.prof
+coverage.out
+
+# Локальные секреты
+.env
