@@ -37,7 +37,8 @@ func TestValidate(t *testing.T) {
 		{name: "empty city", listing: Listing{Title: "Flat", Price: 100}, wantField: "city"},
 		{name: "negative price", listing: Listing{Title: "Flat", City: "Moscow", Price: -1}, wantField: "price"},
 		{name: "zero price ok", listing: Listing{Title: "Flat", City: "Moscow", Price: 0}},
-		// TODO: добавь ещё кейсы валидации (минимум 8 всего по заданию 6).
+		{name: "title & city blank string", listing: Listing{Title: "", City: "", Price: 0}, wantField: "title"},
+		{name: "empty title -150", listing: Listing{Title: "Flat", City: "Moscow", Price: -150}, wantField: "price"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
